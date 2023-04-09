@@ -262,20 +262,35 @@ public class FormMenu extends javax.swing.JFrame {
         LOGO = new javax.swing.JLabel();
         TEXTO = new javax.swing.JLabel();
         GesCurso = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         GesMateria = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         GesEstudiante = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         GesPeriodo = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         GesTarea = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
         GesExamen = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
         RegAsistencia = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         RegTareas = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
         RegSellos = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
         RegExamen = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
         RepAsistencia = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
         RepTareas = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
         ExaCurso = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
         ExaEstudiante = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
         ConfiUsuario = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 0, 0));
@@ -311,252 +326,341 @@ public class FormMenu extends javax.swing.JFrame {
         GesCurso.setMinimumSize(new java.awt.Dimension(1000, 600));
         GesCurso.setPreferredSize(new java.awt.Dimension(1000, 600));
 
+        jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("GESTOR CURSO");
+
         javax.swing.GroupLayout GesCursoLayout = new javax.swing.GroupLayout(GesCurso);
         GesCurso.setLayout(GesCursoLayout);
         GesCursoLayout.setHorizontalGroup(
             GesCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         GesCursoLayout.setVerticalGroup(
             GesCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         JPrincipal.add(GesCurso, "card3");
 
+        GesMateria.setBackground(new java.awt.Color(255, 255, 255));
         GesMateria.setMaximumSize(new java.awt.Dimension(1000, 600));
         GesMateria.setMinimumSize(new java.awt.Dimension(1000, 600));
         GesMateria.setPreferredSize(new java.awt.Dimension(1000, 600));
+
+        jLabel2.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("GESTOR MATERIA");
 
         javax.swing.GroupLayout GesMateriaLayout = new javax.swing.GroupLayout(GesMateria);
         GesMateria.setLayout(GesMateriaLayout);
         GesMateriaLayout.setHorizontalGroup(
             GesMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         GesMateriaLayout.setVerticalGroup(
             GesMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         JPrincipal.add(GesMateria, "card4");
 
+        GesEstudiante.setBackground(new java.awt.Color(255, 255, 255));
         GesEstudiante.setMaximumSize(new java.awt.Dimension(1000, 600));
         GesEstudiante.setMinimumSize(new java.awt.Dimension(1000, 600));
         GesEstudiante.setPreferredSize(new java.awt.Dimension(1000, 600));
+
+        jLabel3.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("GESTOR ESTUDIANTE");
 
         javax.swing.GroupLayout GesEstudianteLayout = new javax.swing.GroupLayout(GesEstudiante);
         GesEstudiante.setLayout(GesEstudianteLayout);
         GesEstudianteLayout.setHorizontalGroup(
             GesEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         GesEstudianteLayout.setVerticalGroup(
             GesEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         JPrincipal.add(GesEstudiante, "card5");
 
+        GesPeriodo.setBackground(new java.awt.Color(255, 255, 255));
         GesPeriodo.setMaximumSize(new java.awt.Dimension(1000, 600));
         GesPeriodo.setMinimumSize(new java.awt.Dimension(1000, 600));
         GesPeriodo.setPreferredSize(new java.awt.Dimension(1000, 600));
+
+        jLabel4.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("GESTOR PERIODO");
 
         javax.swing.GroupLayout GesPeriodoLayout = new javax.swing.GroupLayout(GesPeriodo);
         GesPeriodo.setLayout(GesPeriodoLayout);
         GesPeriodoLayout.setHorizontalGroup(
             GesPeriodoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         GesPeriodoLayout.setVerticalGroup(
             GesPeriodoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         JPrincipal.add(GesPeriodo, "card6");
 
+        GesTarea.setBackground(new java.awt.Color(255, 255, 255));
         GesTarea.setMaximumSize(new java.awt.Dimension(1000, 600));
         GesTarea.setMinimumSize(new java.awt.Dimension(1000, 600));
         GesTarea.setPreferredSize(new java.awt.Dimension(1000, 600));
+
+        jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("GESTOR TEREA");
 
         javax.swing.GroupLayout GesTareaLayout = new javax.swing.GroupLayout(GesTarea);
         GesTarea.setLayout(GesTareaLayout);
         GesTareaLayout.setHorizontalGroup(
             GesTareaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         GesTareaLayout.setVerticalGroup(
             GesTareaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         JPrincipal.add(GesTarea, "card7");
 
+        GesExamen.setBackground(new java.awt.Color(255, 255, 255));
         GesExamen.setMaximumSize(new java.awt.Dimension(1000, 600));
         GesExamen.setMinimumSize(new java.awt.Dimension(1000, 600));
         GesExamen.setPreferredSize(new java.awt.Dimension(1000, 600));
+
+        jLabel6.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("GESTOR EXAMEN");
 
         javax.swing.GroupLayout GesExamenLayout = new javax.swing.GroupLayout(GesExamen);
         GesExamen.setLayout(GesExamenLayout);
         GesExamenLayout.setHorizontalGroup(
             GesExamenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         GesExamenLayout.setVerticalGroup(
             GesExamenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         JPrincipal.add(GesExamen, "card8");
 
+        RegAsistencia.setBackground(new java.awt.Color(255, 255, 255));
         RegAsistencia.setMaximumSize(new java.awt.Dimension(1000, 600));
         RegAsistencia.setMinimumSize(new java.awt.Dimension(1000, 600));
         RegAsistencia.setPreferredSize(new java.awt.Dimension(1000, 600));
+
+        jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("REGISTRO ASISTENCIA");
 
         javax.swing.GroupLayout RegAsistenciaLayout = new javax.swing.GroupLayout(RegAsistencia);
         RegAsistencia.setLayout(RegAsistenciaLayout);
         RegAsistenciaLayout.setHorizontalGroup(
             RegAsistenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         RegAsistenciaLayout.setVerticalGroup(
             RegAsistenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         JPrincipal.add(RegAsistencia, "card9");
 
+        RegTareas.setBackground(new java.awt.Color(255, 255, 255));
         RegTareas.setMaximumSize(new java.awt.Dimension(1000, 600));
         RegTareas.setMinimumSize(new java.awt.Dimension(1000, 600));
         RegTareas.setPreferredSize(new java.awt.Dimension(1000, 600));
+
+        jLabel8.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("REGISTRO TAREAS");
 
         javax.swing.GroupLayout RegTareasLayout = new javax.swing.GroupLayout(RegTareas);
         RegTareas.setLayout(RegTareasLayout);
         RegTareasLayout.setHorizontalGroup(
             RegTareasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         RegTareasLayout.setVerticalGroup(
             RegTareasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         JPrincipal.add(RegTareas, "card10");
 
+        RegSellos.setBackground(new java.awt.Color(255, 255, 255));
         RegSellos.setMaximumSize(new java.awt.Dimension(1000, 600));
         RegSellos.setMinimumSize(new java.awt.Dimension(1000, 600));
         RegSellos.setPreferredSize(new java.awt.Dimension(1000, 600));
+
+        jLabel9.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("REGSITRO SELLOS");
 
         javax.swing.GroupLayout RegSellosLayout = new javax.swing.GroupLayout(RegSellos);
         RegSellos.setLayout(RegSellosLayout);
         RegSellosLayout.setHorizontalGroup(
             RegSellosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         RegSellosLayout.setVerticalGroup(
             RegSellosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         JPrincipal.add(RegSellos, "card11");
 
+        RegExamen.setBackground(new java.awt.Color(255, 255, 255));
         RegExamen.setMaximumSize(new java.awt.Dimension(1000, 600));
         RegExamen.setMinimumSize(new java.awt.Dimension(1000, 600));
         RegExamen.setPreferredSize(new java.awt.Dimension(1000, 600));
+
+        jLabel10.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("REGISTRO EXAMEN");
 
         javax.swing.GroupLayout RegExamenLayout = new javax.swing.GroupLayout(RegExamen);
         RegExamen.setLayout(RegExamenLayout);
         RegExamenLayout.setHorizontalGroup(
             RegExamenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         RegExamenLayout.setVerticalGroup(
             RegExamenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         JPrincipal.add(RegExamen, "card12");
 
+        RepAsistencia.setBackground(new java.awt.Color(255, 255, 255));
         RepAsistencia.setMaximumSize(new java.awt.Dimension(1000, 600));
         RepAsistencia.setMinimumSize(new java.awt.Dimension(1000, 600));
         RepAsistencia.setPreferredSize(new java.awt.Dimension(1000, 600));
+
+        jLabel11.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("REPORTE ASISTENCIA");
 
         javax.swing.GroupLayout RepAsistenciaLayout = new javax.swing.GroupLayout(RepAsistencia);
         RepAsistencia.setLayout(RepAsistenciaLayout);
         RepAsistenciaLayout.setHorizontalGroup(
             RepAsistenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         RepAsistenciaLayout.setVerticalGroup(
             RepAsistenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         JPrincipal.add(RepAsistencia, "card13");
 
+        RepTareas.setBackground(new java.awt.Color(255, 255, 255));
         RepTareas.setMaximumSize(new java.awt.Dimension(1000, 600));
         RepTareas.setMinimumSize(new java.awt.Dimension(1000, 600));
         RepTareas.setPreferredSize(new java.awt.Dimension(1000, 600));
+
+        jLabel12.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("REPORTE TEREAS");
 
         javax.swing.GroupLayout RepTareasLayout = new javax.swing.GroupLayout(RepTareas);
         RepTareas.setLayout(RepTareasLayout);
         RepTareasLayout.setHorizontalGroup(
             RepTareasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         RepTareasLayout.setVerticalGroup(
             RepTareasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         JPrincipal.add(RepTareas, "card14");
 
+        ExaCurso.setBackground(new java.awt.Color(255, 255, 255));
         ExaCurso.setMaximumSize(new java.awt.Dimension(1000, 600));
         ExaCurso.setMinimumSize(new java.awt.Dimension(1000, 600));
         ExaCurso.setPreferredSize(new java.awt.Dimension(1000, 600));
+
+        jLabel13.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("EXAMEN CURSO");
 
         javax.swing.GroupLayout ExaCursoLayout = new javax.swing.GroupLayout(ExaCurso);
         ExaCurso.setLayout(ExaCursoLayout);
         ExaCursoLayout.setHorizontalGroup(
             ExaCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         ExaCursoLayout.setVerticalGroup(
             ExaCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         JPrincipal.add(ExaCurso, "card15");
 
+        ExaEstudiante.setBackground(new java.awt.Color(255, 255, 255));
         ExaEstudiante.setMaximumSize(new java.awt.Dimension(1000, 600));
         ExaEstudiante.setMinimumSize(new java.awt.Dimension(1000, 600));
         ExaEstudiante.setPreferredSize(new java.awt.Dimension(1000, 600));
+
+        jLabel14.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("EXAMEN ESTUDIANTE");
 
         javax.swing.GroupLayout ExaEstudianteLayout = new javax.swing.GroupLayout(ExaEstudiante);
         ExaEstudiante.setLayout(ExaEstudianteLayout);
         ExaEstudianteLayout.setHorizontalGroup(
             ExaEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         ExaEstudianteLayout.setVerticalGroup(
             ExaEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         JPrincipal.add(ExaEstudiante, "card16");
 
+        ConfiUsuario.setBackground(new java.awt.Color(255, 255, 255));
         ConfiUsuario.setMaximumSize(new java.awt.Dimension(1000, 600));
         ConfiUsuario.setMinimumSize(new java.awt.Dimension(1000, 600));
+
+        jLabel15.setFont(new java.awt.Font("Leelawadee UI", 1, 36)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("CONFIGURACION USUSARIO");
 
         javax.swing.GroupLayout ConfiUsuarioLayout = new javax.swing.GroupLayout(ConfiUsuario);
         ConfiUsuario.setLayout(ConfiUsuarioLayout);
         ConfiUsuarioLayout.setHorizontalGroup(
             ConfiUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         ConfiUsuarioLayout.setVerticalGroup(
             ConfiUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         JPrincipal.add(ConfiUsuario, "card16");
@@ -640,5 +744,20 @@ public class FormMenu extends javax.swing.JFrame {
     private javax.swing.JPanel RepAsistencia;
     private javax.swing.JPanel RepTareas;
     private javax.swing.JLabel TEXTO;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
