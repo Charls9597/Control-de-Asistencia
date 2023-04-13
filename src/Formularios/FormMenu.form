@@ -1827,7 +1827,7 @@
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                        <TitledBorder title="ASISTENCIA ESTUDIANTES">
+                        <TitledBorder title="REPORTES ASISTENCIA">
                           <Font PropertyName="font" name="Leelawadee UI" size="14" style="1"/>
                           <Color PropertyName="color" blue="0" green="0" red="99" type="rgb"/>
                         </TitledBorder>
@@ -2054,7 +2054,7 @@
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                        <TitledBorder title="ASISTENCIA ESTUDIANTES">
+                        <TitledBorder title="REPORTES TAREAS">
                           <Font PropertyName="font" name="Leelawadee UI" size="14" style="1"/>
                           <Color PropertyName="color" blue="0" green="0" red="99" type="rgb"/>
                         </TitledBorder>
