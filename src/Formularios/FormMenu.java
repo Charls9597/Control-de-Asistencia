@@ -13,34 +13,32 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 
 public class FormMenu extends javax.swing.JFrame {
-    
+
     private JMenuBar mMenu;
-    private JMenu Home, mniGestionar, mniRegistrar, mniReportes, mniExamen, mniAjustes;
+    private JMenu Home, mniGestionar, mniRegistrar, mniReportes, mniAjustes;
     private JMenuItem Inicio, Salir;
-    private JMenuItem mniGestionar1, mniGestionar2, mniGestionar3, mniGestionar4, mniGestionar5, mniGestionar6;
-    private JMenuItem mniRegistrar1, mniRegistrar2, mniRegistrar3, mniRegistrar4;
+    private JMenuItem mniGestionar2, mniGestionar3, mniGestionar4, mniGestionar5;
+    private JMenuItem mniRegistrar1, mniRegistrar2, mniRegistrar3;
     private JMenuItem mniReportes1, mniReportes2;
-    private JMenuItem mniExamen1, mniExamen2;
     private JMenuItem mniAjustes1;
     private String iconCurso = "/Imagenes/Iconos/home_icon.png",
             iconMateria = "/Imagenes/Iconos/materia_icon.png",
             iconEstudiante = "/Imagenes/Iconos/estudiante_icon.png",
             iconPeriodo = "/Imagenes/Iconos/periodo_icon.png",
             iconTarea = "/Imagenes/Iconos/tarea_icon.png",
-            iconExamen = "/Imagenes/Iconos/examen_icon.png",
             iconAsistencia = "/Imagenes/Iconos/asistencia_icon.png",
             iconSello = "/Imagenes/Iconos/sello_icon.png",
             iconUsuario = "/Imagenes/Iconos/usuario_icon.png",
             iconExit = "/Imagenes/Iconos/exit_icon.png";
-    
+
     Font miFont = new Font("Leelawadee UI", Font.BOLD, 14);
     Color color = new Color(255, 255, 255);
-    
+
     public FormMenu() {
         initComponents();
         mMenu = new JMenuBar();
         setJMenuBar(mMenu);
-        
+
         Home = new JMenu("HOGAR");
         mMenu.add(Home);
         Home.setForeground(color);
@@ -49,27 +47,23 @@ public class FormMenu extends javax.swing.JFrame {
         Home.add(Inicio);
         Inicio.setForeground(color);
         Inicio.setFont(miFont);
-        Salir = new JMenuItem("SALIR",getIcon(iconExit));
+        Salir = new JMenuItem("SALIR", getIcon(iconExit));
         Home.add(Salir);
         Salir.setForeground(color);
         Salir.setFont(miFont);
-        
+
         mniGestionar = new JMenu("GESTIONAR");
         mMenu.add(mniGestionar);
         mniGestionar.setForeground(color);
         mniGestionar.setFont(miFont);
-        mniGestionar1 = new JMenuItem("CURSO", getIcon(iconCurso));
-        mniGestionar.add(mniGestionar1);
-        mniGestionar1.setForeground(color);
-        mniGestionar1.setFont(miFont);
-        mniGestionar2 = new JMenuItem("MATERIA", getIcon(iconMateria));
-        mniGestionar.add(mniGestionar2);
-        mniGestionar2.setForeground(color);
-        mniGestionar2.setFont(miFont);
         mniGestionar3 = new JMenuItem("ESTUDIANTES", getIcon(iconEstudiante));
         mniGestionar.add(mniGestionar3);
         mniGestionar3.setForeground(color);
         mniGestionar3.setFont(miFont);
+        mniGestionar2 = new JMenuItem("MATERIA", getIcon(iconMateria));
+        mniGestionar.add(mniGestionar2);
+        mniGestionar2.setForeground(color);
+        mniGestionar2.setFont(miFont);
         mniGestionar4 = new JMenuItem("PERIODO", getIcon(iconPeriodo));
         mniGestionar.add(mniGestionar4);
         mniGestionar4.setForeground(color);
@@ -78,11 +72,7 @@ public class FormMenu extends javax.swing.JFrame {
         mniGestionar.add(mniGestionar5);
         mniGestionar5.setForeground(color);
         mniGestionar5.setFont(miFont);
-        mniGestionar6 = new JMenuItem("EXAMEN", getIcon(iconExamen));
-        mniGestionar.add(mniGestionar6);
-        mniGestionar6.setForeground(color);
-        mniGestionar6.setFont(miFont);
-        
+
         mniRegistrar = new JMenu("REGISTRAR");
         mMenu.add(mniRegistrar);
         mniRegistrar.setForeground(color);
@@ -99,11 +89,7 @@ public class FormMenu extends javax.swing.JFrame {
         mniRegistrar.add(mniRegistrar3);
         mniRegistrar3.setForeground(color);
         mniRegistrar3.setFont(miFont);
-        mniRegistrar4 = new JMenuItem("EXAMENES", getIcon(iconExamen));
-        mniRegistrar.add(mniRegistrar4);
-        mniRegistrar4.setForeground(color);
-        mniRegistrar4.setFont(miFont);
-        
+
         mniReportes = new JMenu("REPORTES");
         mMenu.add(mniReportes);
         mniReportes.setForeground(color);
@@ -116,20 +102,7 @@ public class FormMenu extends javax.swing.JFrame {
         mniReportes.add(mniReportes2);
         mniReportes2.setForeground(color);
         mniReportes2.setFont(miFont);
-        
-        mniExamen = new JMenu("EXAMEN");
-        mMenu.add(mniExamen);
-        mniExamen.setForeground(color);
-        mniExamen.setFont(miFont);
-        mniExamen1 = new JMenuItem("CURSO", getIcon(iconCurso));
-        mniExamen.add(mniExamen1);
-        mniExamen1.setForeground(color);
-        mniExamen1.setFont(miFont);
-        mniExamen2 = new JMenuItem("ESTUDIANTE", getIcon(iconEstudiante));
-        mniExamen.add(mniExamen2);
-        mniExamen2.setForeground(color);
-        mniExamen2.setFont(miFont);
-        
+
         mniAjustes = new JMenu("AJUSTES");
         mMenu.add(mniAjustes);
         mniAjustes.setForeground(color);
@@ -138,18 +111,15 @@ public class FormMenu extends javax.swing.JFrame {
         mniAjustes.add(mniAjustes1);
         mniAjustes1.setForeground(color);
         mniAjustes1.setFont(miFont);
-        
+
         Inicio.addActionListener((ActionEvent e) -> {
             CambiarVista(FMInicio);
         });
-        
+
         Salir.addActionListener((ActionEvent e) -> {
             System.exit(0);
         });
-        
-        mniGestionar1.addActionListener((ActionEvent e) -> {
-            CambiarVista(GesCurso);
-        });
+
         mniGestionar2.addActionListener((ActionEvent e) -> {
             CambiarVista(GesMateria);
         });
@@ -162,10 +132,7 @@ public class FormMenu extends javax.swing.JFrame {
         mniGestionar5.addActionListener((ActionEvent e) -> {
             CambiarVista(GesTarea);
         });
-        mniGestionar6.addActionListener((ActionEvent e) -> {
-            CambiarVista(GesExamen);
-        });
-        
+
         mniRegistrar1.addActionListener((ActionEvent e) -> {
             CambiarVista(RegAsistencia);
         });
@@ -175,24 +142,14 @@ public class FormMenu extends javax.swing.JFrame {
         mniRegistrar3.addActionListener((ActionEvent e) -> {
             CambiarVista(RegSellos);
         });
-        mniRegistrar4.addActionListener((ActionEvent e) -> {
-            CambiarVista(RegExamen);
-        });
-        
+
         mniReportes1.addActionListener((ActionEvent e) -> {
             CambiarVista(RepAsistencia);
         });
         mniReportes2.addActionListener((ActionEvent e) -> {
             CambiarVista(RepTareas);
         });
-        
-        mniExamen1.addActionListener((ActionEvent e) -> {
-            CambiarVista(ExaCurso);
-        });
-        mniExamen2.addActionListener((ActionEvent e) -> {
-            CambiarVista(ExaEstudiante);
-        });
-        
+
         mniAjustes1.addActionListener((ActionEvent e) -> {
             CambiarVista(ConfiUsuario);
         });
@@ -202,61 +159,51 @@ public class FormMenu extends javax.swing.JFrame {
         JPrincipal.removeAll();
         JPrincipal.add(jpanel);
         JPrincipal.repaint();
-        
+
         ActivarVista(jpanel);
     }
 
     private void ActivarVista(JPanel jpanel) {
         FMInicio.setEnabled(false);
         FMInicio.setVisible(false);
-        
-        GesCurso.setEnabled(false);
-        GesCurso.setVisible(false);
+
         GesEstudiante.setEnabled(false);
         GesEstudiante.setVisible(false);
-        GesExamen.setEnabled(false);
-        GesExamen.setVisible(false);
         GesMateria.setEnabled(false);
         GesMateria.setVisible(false);
         GesPeriodo.setEnabled(false);
         GesPeriodo.setVisible(false);
         GesTarea.setEnabled(false);
         GesTarea.setVisible(false);
-        
+
         RegAsistencia.setEnabled(false);
         RegAsistencia.setVisible(false);
-        RegExamen.setEnabled(false);
-        RegExamen.setVisible(false);
         RegSellos.setEnabled(false);
         RegSellos.setVisible(false);
         RegTareas.setEnabled(false);
         RegTareas.setVisible(false);
-        
+
         RepAsistencia.setEnabled(false);
         RepAsistencia.setVisible(false);
         RepTareas.setEnabled(false);
         RepTareas.setVisible(false);
-        
-        ExaCurso.setEnabled(false);
-        ExaCurso.setVisible(false);
-        ExaEstudiante.setEnabled(false);
-        ExaEstudiante.setVisible(false);
-        
+
         ConfiUsuario.setEnabled(false);
         ConfiUsuario.setVisible(false);
-        
+
         jpanel.setEnabled(true);
         jpanel.setVisible(true);
     }
-    
+
     private Icon getIcon(String ruta) {
         return new ImageIcon(new ImageIcon(getClass().getResource(ruta))
                 .getImage().getScaledInstance(30, 30, 0));
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel3 = new javax.swing.JPanel();
         JPrincipal = new javax.swing.JPanel();
@@ -266,31 +213,42 @@ public class FormMenu extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         TEXTO = new javax.swing.JLabel();
         LOGO = new javax.swing.JLabel();
-        GesCurso = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         GesMateria = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
+        jToggleButton4 = new javax.swing.JToggleButton();
+        PRegistrar6 = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTable7 = new javax.swing.JTable();
+        filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 25), new java.awt.Dimension(0, 25), new java.awt.Dimension(32767, 30));
         GesEstudiante = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
+        jToggleButton3 = new javax.swing.JToggleButton();
+        PRegistrar2 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 25), new java.awt.Dimension(0, 25), new java.awt.Dimension(32767, 30));
         GesPeriodo = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
+        jToggleButton5 = new javax.swing.JToggleButton();
+        PRegistrar7 = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTable8 = new javax.swing.JTable();
+        filler8 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 25), new java.awt.Dimension(0, 25), new java.awt.Dimension(32767, 30));
         GesTarea = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
-        GesExamen = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel15 = new javax.swing.JPanel();
-        jPanel34 = new javax.swing.JPanel();
+        jToggleButton6 = new javax.swing.JToggleButton();
+        PRegistrar8 = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTable9 = new javax.swing.JTable();
+        filler9 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 25), new java.awt.Dimension(0, 25), new java.awt.Dimension(32767, 30));
         RegAsistencia = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -303,10 +261,6 @@ public class FormMenu extends javax.swing.JFrame {
         jPanel20 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
-        RegExamen = new javax.swing.JPanel();
-        jPanel22 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jPanel23 = new javax.swing.JPanel();
         RepAsistencia = new javax.swing.JPanel();
         jPanel26 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -315,18 +269,11 @@ public class FormMenu extends javax.swing.JFrame {
         jPanel24 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jPanel25 = new javax.swing.JPanel();
-        ExaCurso = new javax.swing.JPanel();
-        jPanel28 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jPanel29 = new javax.swing.JPanel();
-        ExaEstudiante = new javax.swing.JPanel();
-        jPanel30 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jPanel31 = new javax.swing.JPanel();
         ConfiUsuario = new javax.swing.JPanel();
         jPanel32 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jPanel33 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -341,10 +288,12 @@ public class FormMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 0, 0));
-        setMinimumSize(new java.awt.Dimension(100, 600));
+        setMaximumSize(new java.awt.Dimension(1000, 600));
+        setMinimumSize(new java.awt.Dimension(1000, 600));
         setResizable(false);
 
         JPrincipal.setMaximumSize(new java.awt.Dimension(1000, 600));
+        JPrincipal.setMinimumSize(new java.awt.Dimension(1000, 600));
         JPrincipal.setPreferredSize(new java.awt.Dimension(1000, 600));
         JPrincipal.setLayout(new java.awt.CardLayout());
 
@@ -408,59 +357,6 @@ public class FormMenu extends javax.swing.JFrame {
 
         JPrincipal.add(FMInicio, "card2");
 
-        GesCurso.setBackground(new java.awt.Color(255, 255, 255));
-        GesCurso.setMaximumSize(new java.awt.Dimension(1000, 600));
-        GesCurso.setMinimumSize(new java.awt.Dimension(1000, 600));
-        GesCurso.setPreferredSize(new java.awt.Dimension(1000, 600));
-        GesCurso.setLayout(new javax.swing.BoxLayout(GesCurso, javax.swing.BoxLayout.Y_AXIS));
-
-        jPanel2.setBackground(new java.awt.Color(153, 0, 0));
-        jPanel2.setMaximumSize(new java.awt.Dimension(1000, 35));
-        jPanel2.setMinimumSize(new java.awt.Dimension(1000, 35));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1000, 35));
-
-        jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("AGREGAR CURSO");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(9, Short.MAX_VALUE))
-        );
-
-        GesCurso.add(jPanel2);
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1000, 565));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1000, 565));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
-        );
-
-        GesCurso.add(jPanel1);
-
-        JPrincipal.add(GesCurso, "card3");
-
         GesMateria.setBackground(new java.awt.Color(255, 255, 255));
         GesMateria.setMaximumSize(new java.awt.Dimension(1000, 600));
         GesMateria.setMinimumSize(new java.awt.Dimension(1000, 600));
@@ -498,17 +394,46 @@ public class FormMenu extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setMaximumSize(new java.awt.Dimension(1000, 565));
         jPanel5.setMinimumSize(new java.awt.Dimension(1000, 565));
+        jPanel5.setLayout(null);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+        jToggleButton4.setBackground(new java.awt.Color(153, 0, 0));
+        jToggleButton4.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jToggleButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/nuevoS.png"))); // NOI18N
+        jToggleButton4.setText("NUEVO");
+        jPanel5.add(jToggleButton4);
+        jToggleButton4.setBounds(6, 6, 106, 31);
+
+        PRegistrar6.setBackground(new java.awt.Color(204, 204, 204));
+        PRegistrar6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "LISTA DATOS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Leelawadee UI", 1, 14), new java.awt.Color(153, 0, 0))); // NOI18N
+
+        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "MATERIA"
+            }
+        ));
+        jScrollPane7.setViewportView(jTable7);
+
+        javax.swing.GroupLayout PRegistrar6Layout = new javax.swing.GroupLayout(PRegistrar6);
+        PRegistrar6.setLayout(PRegistrar6Layout);
+        PRegistrar6Layout.setHorizontalGroup(
+            PRegistrar6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
+        PRegistrar6Layout.setVerticalGroup(
+            PRegistrar6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PRegistrar6Layout.createSequentialGroup()
+                .addGap(0, 77, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        jPanel5.add(PRegistrar6);
+        PRegistrar6.setBounds(0, 43, 1000, 490);
+        jPanel5.add(filler7);
+        filler7.setBounds(140, 535, 706, 25);
 
         GesMateria.add(jPanel5);
 
@@ -551,17 +476,48 @@ public class FormMenu extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setMaximumSize(new java.awt.Dimension(1000, 565));
         jPanel7.setMinimumSize(new java.awt.Dimension(1000, 565));
+        jPanel7.setLayout(null);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+        jToggleButton3.setBackground(new java.awt.Color(153, 0, 0));
+        jToggleButton3.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jToggleButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/nuevoS.png"))); // NOI18N
+        jToggleButton3.setText("NUEVO");
+        jPanel7.add(jToggleButton3);
+        jToggleButton3.setBounds(6, 6, 106, 31);
+
+        PRegistrar2.setBackground(new java.awt.Color(204, 204, 204));
+        PRegistrar2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "LISTA DATOS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Leelawadee UI", 1, 14), new java.awt.Color(153, 0, 0))); // NOI18N
+
+        jTable3.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        jTable3.setForeground(new java.awt.Color(153, 0, 0));
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "CI", "NOMBRES", "APELLIDO PATERNO", "APELLIDO MATERNO", "TELEFONO", "DIRECCION"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
+
+        javax.swing.GroupLayout PRegistrar2Layout = new javax.swing.GroupLayout(PRegistrar2);
+        PRegistrar2.setLayout(PRegistrar2Layout);
+        PRegistrar2Layout.setHorizontalGroup(
+            PRegistrar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
+        PRegistrar2Layout.setVerticalGroup(
+            PRegistrar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PRegistrar2Layout.createSequentialGroup()
+                .addGap(0, 77, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        jPanel7.add(PRegistrar2);
+        PRegistrar2.setBounds(0, 43, 1000, 490);
+        jPanel7.add(filler3);
+        filler3.setBounds(140, 535, 706, 25);
 
         GesEstudiante.add(jPanel7);
 
@@ -604,17 +560,46 @@ public class FormMenu extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setMaximumSize(new java.awt.Dimension(1000, 565));
         jPanel9.setMinimumSize(new java.awt.Dimension(1000, 565));
+        jPanel9.setLayout(null);
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+        jToggleButton5.setBackground(new java.awt.Color(153, 0, 0));
+        jToggleButton5.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jToggleButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jToggleButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/nuevoS.png"))); // NOI18N
+        jToggleButton5.setText("NUEVO");
+        jPanel9.add(jToggleButton5);
+        jToggleButton5.setBounds(6, 6, 106, 31);
+
+        PRegistrar7.setBackground(new java.awt.Color(204, 204, 204));
+        PRegistrar7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "LISTA DATOS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Leelawadee UI", 1, 14), new java.awt.Color(153, 0, 0))); // NOI18N
+
+        jTable8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "PERIODO"
+            }
+        ));
+        jScrollPane8.setViewportView(jTable8);
+
+        javax.swing.GroupLayout PRegistrar7Layout = new javax.swing.GroupLayout(PRegistrar7);
+        PRegistrar7.setLayout(PRegistrar7Layout);
+        PRegistrar7Layout.setHorizontalGroup(
+            PRegistrar7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
+        PRegistrar7Layout.setVerticalGroup(
+            PRegistrar7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PRegistrar7Layout.createSequentialGroup()
+                .addGap(0, 77, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        jPanel9.add(PRegistrar7);
+        PRegistrar7.setBounds(0, 43, 1000, 490);
+        jPanel9.add(filler8);
+        filler8.setBounds(140, 535, 706, 25);
 
         GesPeriodo.add(jPanel9);
 
@@ -657,94 +642,50 @@ public class FormMenu extends javax.swing.JFrame {
         jPanel13.setBackground(new java.awt.Color(255, 255, 255));
         jPanel13.setMaximumSize(new java.awt.Dimension(1000, 565));
         jPanel13.setMinimumSize(new java.awt.Dimension(1000, 565));
+        jPanel13.setLayout(null);
 
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+        jToggleButton6.setBackground(new java.awt.Color(153, 0, 0));
+        jToggleButton6.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jToggleButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jToggleButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/nuevoS.png"))); // NOI18N
+        jToggleButton6.setText("NUEVO");
+        jPanel13.add(jToggleButton6);
+        jToggleButton6.setBounds(6, 6, 106, 31);
+
+        PRegistrar8.setBackground(new java.awt.Color(204, 204, 204));
+        PRegistrar8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "LISTA DATOS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Leelawadee UI", 1, 14), new java.awt.Color(153, 0, 0))); // NOI18N
+
+        jTable9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "TAREAS", "FECHA"
+            }
+        ));
+        jScrollPane9.setViewportView(jTable9);
+
+        javax.swing.GroupLayout PRegistrar8Layout = new javax.swing.GroupLayout(PRegistrar8);
+        PRegistrar8.setLayout(PRegistrar8Layout);
+        PRegistrar8Layout.setHorizontalGroup(
+            PRegistrar8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
         );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
+        PRegistrar8Layout.setVerticalGroup(
+            PRegistrar8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PRegistrar8Layout.createSequentialGroup()
+                .addGap(0, 77, Short.MAX_VALUE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        jPanel13.add(PRegistrar8);
+        PRegistrar8.setBounds(0, 43, 1000, 490);
+        jPanel13.add(filler9);
+        filler9.setBounds(140, 535, 706, 25);
 
         GesTarea.add(jPanel13);
 
         JPrincipal.add(GesTarea, "card7");
-
-        GesExamen.setBackground(new java.awt.Color(255, 255, 255));
-        GesExamen.setMaximumSize(new java.awt.Dimension(1000, 600));
-        GesExamen.setMinimumSize(new java.awt.Dimension(1000, 600));
-        GesExamen.setPreferredSize(new java.awt.Dimension(1000, 600));
-        GesExamen.setLayout(new javax.swing.BoxLayout(GesExamen, javax.swing.BoxLayout.Y_AXIS));
-
-        jPanel14.setBackground(new java.awt.Color(153, 0, 0));
-        jPanel14.setMaximumSize(new java.awt.Dimension(1000, 35));
-        jPanel14.setMinimumSize(new java.awt.Dimension(1000, 35));
-        jPanel14.setPreferredSize(new java.awt.Dimension(1000, 35));
-
-        jLabel6.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("AGREGAR EXAMEN\n");
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addContainerGap(9, Short.MAX_VALUE))
-        );
-
-        GesExamen.add(jPanel14);
-
-        jPanel15.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel15.setMaximumSize(new java.awt.Dimension(1000, 565));
-        jPanel15.setMinimumSize(new java.awt.Dimension(1000, 565));
-
-        jPanel34.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel34.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "EXAMEN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Leelawadee UI", 1, 12), new java.awt.Color(153, 0, 0))); // NOI18N
-
-        javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
-        jPanel34.setLayout(jPanel34Layout);
-        jPanel34Layout.setHorizontalGroup(
-            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 978, Short.MAX_VALUE)
-        );
-        jPanel34Layout.setVerticalGroup(
-            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
-        jPanel15.setLayout(jPanel15Layout);
-        jPanel15Layout.setHorizontalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel15Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel15Layout.setVerticalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel15Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        GesExamen.add(jPanel15);
-
-        JPrincipal.add(GesExamen, "card8");
 
         RegAsistencia.setBackground(new java.awt.Color(255, 255, 255));
         RegAsistencia.setMaximumSize(new java.awt.Dimension(1000, 600));
@@ -905,57 +846,6 @@ public class FormMenu extends javax.swing.JFrame {
 
         JPrincipal.add(RegSellos, "card11");
 
-        RegExamen.setBackground(new java.awt.Color(255, 255, 255));
-        RegExamen.setMaximumSize(new java.awt.Dimension(1000, 600));
-        RegExamen.setMinimumSize(new java.awt.Dimension(1000, 600));
-        RegExamen.setPreferredSize(new java.awt.Dimension(1000, 600));
-        RegExamen.setLayout(new javax.swing.BoxLayout(RegExamen, javax.swing.BoxLayout.Y_AXIS));
-
-        jPanel22.setBackground(new java.awt.Color(153, 0, 0));
-        jPanel22.setMaximumSize(new java.awt.Dimension(1000, 35));
-        jPanel22.setMinimumSize(new java.awt.Dimension(1000, 35));
-        jPanel22.setPreferredSize(new java.awt.Dimension(1000, 35));
-
-        jLabel10.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("REGISTRAR EXAMEN");
-
-        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
-        jPanel22.setLayout(jPanel22Layout);
-        jPanel22Layout.setHorizontalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel22Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel22Layout.setVerticalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel22Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel10)
-                .addContainerGap(9, Short.MAX_VALUE))
-        );
-
-        RegExamen.add(jPanel22);
-
-        jPanel23.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
-        jPanel23.setLayout(jPanel23Layout);
-        jPanel23Layout.setHorizontalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
-        );
-        jPanel23Layout.setVerticalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
-        );
-
-        RegExamen.add(jPanel23);
-
-        JPrincipal.add(RegExamen, "card12");
-
         RepAsistencia.setBackground(new java.awt.Color(255, 255, 255));
         RepAsistencia.setMaximumSize(new java.awt.Dimension(1000, 600));
         RepAsistencia.setMinimumSize(new java.awt.Dimension(1000, 600));
@@ -1066,114 +956,10 @@ public class FormMenu extends javax.swing.JFrame {
 
         JPrincipal.add(RepTareas, "card14");
 
-        ExaCurso.setBackground(new java.awt.Color(255, 255, 255));
-        ExaCurso.setMaximumSize(new java.awt.Dimension(1000, 600));
-        ExaCurso.setMinimumSize(new java.awt.Dimension(1000, 600));
-        ExaCurso.setPreferredSize(new java.awt.Dimension(1000, 600));
-        ExaCurso.setLayout(new javax.swing.BoxLayout(ExaCurso, javax.swing.BoxLayout.Y_AXIS));
-
-        jPanel28.setBackground(new java.awt.Color(153, 0, 0));
-        jPanel28.setMaximumSize(new java.awt.Dimension(1000, 35));
-        jPanel28.setMinimumSize(new java.awt.Dimension(1000, 35));
-        jPanel28.setPreferredSize(new java.awt.Dimension(1000, 35));
-
-        jLabel13.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("EXAMEN CURSO");
-
-        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
-        jPanel28.setLayout(jPanel28Layout);
-        jPanel28Layout.setHorizontalGroup(
-            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel28Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel28Layout.setVerticalGroup(
-            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel28Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13)
-                .addContainerGap(9, Short.MAX_VALUE))
-        );
-
-        ExaCurso.add(jPanel28);
-
-        jPanel29.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel29.setMaximumSize(new java.awt.Dimension(1000, 565));
-        jPanel29.setMinimumSize(new java.awt.Dimension(1000, 565));
-        jPanel29.setName(""); // NOI18N
-
-        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
-        jPanel29.setLayout(jPanel29Layout);
-        jPanel29Layout.setHorizontalGroup(
-            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
-        );
-        jPanel29Layout.setVerticalGroup(
-            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
-        );
-
-        ExaCurso.add(jPanel29);
-
-        JPrincipal.add(ExaCurso, "card15");
-
-        ExaEstudiante.setBackground(new java.awt.Color(255, 255, 255));
-        ExaEstudiante.setMaximumSize(new java.awt.Dimension(1000, 600));
-        ExaEstudiante.setMinimumSize(new java.awt.Dimension(1000, 600));
-        ExaEstudiante.setPreferredSize(new java.awt.Dimension(1000, 600));
-        ExaEstudiante.setLayout(new javax.swing.BoxLayout(ExaEstudiante, javax.swing.BoxLayout.Y_AXIS));
-
-        jPanel30.setBackground(new java.awt.Color(153, 0, 0));
-        jPanel30.setMaximumSize(new java.awt.Dimension(1000, 35));
-        jPanel30.setMinimumSize(new java.awt.Dimension(1000, 35));
-        jPanel30.setPreferredSize(new java.awt.Dimension(1000, 35));
-
-        jLabel14.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("EXAMEN ESTUDIANTE");
-
-        javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
-        jPanel30.setLayout(jPanel30Layout);
-        jPanel30Layout.setHorizontalGroup(
-            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel30Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel30Layout.setVerticalGroup(
-            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel30Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel14)
-                .addContainerGap(9, Short.MAX_VALUE))
-        );
-
-        ExaEstudiante.add(jPanel30);
-
-        jPanel31.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
-        jPanel31.setLayout(jPanel31Layout);
-        jPanel31Layout.setHorizontalGroup(
-            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
-        );
-        jPanel31Layout.setVerticalGroup(
-            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
-        );
-
-        ExaEstudiante.add(jPanel31);
-
-        JPrincipal.add(ExaEstudiante, "card16");
-
         ConfiUsuario.setBackground(new java.awt.Color(255, 255, 255));
         ConfiUsuario.setMaximumSize(new java.awt.Dimension(1000, 600));
         ConfiUsuario.setMinimumSize(new java.awt.Dimension(1000, 600));
+        ConfiUsuario.setPreferredSize(new java.awt.Dimension(1000, 600));
         ConfiUsuario.setLayout(new javax.swing.BoxLayout(ConfiUsuario, javax.swing.BoxLayout.Y_AXIS));
 
         jPanel32.setBackground(new java.awt.Color(153, 0, 0));
@@ -1207,17 +993,22 @@ public class FormMenu extends javax.swing.JFrame {
         jPanel33.setBackground(new java.awt.Color(255, 255, 255));
         jPanel33.setMaximumSize(new java.awt.Dimension(1000, 565));
         jPanel33.setMinimumSize(new java.awt.Dimension(1000, 565));
+        jPanel33.setLayout(new javax.swing.BoxLayout(jPanel33, javax.swing.BoxLayout.LINE_AXIS));
 
-        javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
-        jPanel33.setLayout(jPanel33Layout);
-        jPanel33Layout.setHorizontalGroup(
-            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "DATOS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Leelawadee UI", 1, 14), new java.awt.Color(153, 0, 0))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 990, Short.MAX_VALUE)
         );
-        jPanel33Layout.setVerticalGroup(
-            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 538, Short.MAX_VALUE)
         );
+
+        jPanel33.add(jPanel1);
 
         ConfiUsuario.add(jPanel33);
 
@@ -1249,7 +1040,10 @@ public class FormMenu extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         Color color = new Color(153, 0, 0);
+        Color colorTF = new Color(170, 0, 0);
         UIManager.put("nimbusBase", color);
+        UIManager.put("text", color.WHITE);
+        UIManager.put("TextField.background", colorTF);
 
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1284,37 +1078,35 @@ public class FormMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ConfiUsuario;
-    private javax.swing.JPanel ExaCurso;
-    private javax.swing.JPanel ExaEstudiante;
     private javax.swing.JPanel FMInicio;
-    private javax.swing.JPanel GesCurso;
     private javax.swing.JPanel GesEstudiante;
-    private javax.swing.JPanel GesExamen;
     private javax.swing.JPanel GesMateria;
     private javax.swing.JPanel GesPeriodo;
     private javax.swing.JPanel GesTarea;
     private javax.swing.JPanel JPrincipal;
     private javax.swing.JLabel LOGO;
+    private javax.swing.JPanel PRegistrar2;
+    private javax.swing.JPanel PRegistrar6;
+    private javax.swing.JPanel PRegistrar7;
+    private javax.swing.JPanel PRegistrar8;
     private javax.swing.JPanel RegAsistencia;
-    private javax.swing.JPanel RegExamen;
     private javax.swing.JPanel RegSellos;
     private javax.swing.JPanel RegTareas;
     private javax.swing.JPanel RepAsistencia;
     private javax.swing.JPanel RepTareas;
     private javax.swing.JLabel TEXTO;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.Box.Filler filler3;
+    private javax.swing.Box.Filler filler7;
+    private javax.swing.Box.Filler filler8;
+    private javax.swing.Box.Filler filler9;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -1323,34 +1115,36 @@ public class FormMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;
-    private javax.swing.JPanel jPanel28;
-    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel30;
-    private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel33;
-    private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable7;
+    private javax.swing.JTable jTable8;
+    private javax.swing.JTable jTable9;
+    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JToggleButton jToggleButton5;
+    private javax.swing.JToggleButton jToggleButton6;
     // End of variables declaration//GEN-END:variables
 }
