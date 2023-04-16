@@ -17,7 +17,7 @@ public class FormMenu extends javax.swing.JFrame {
     private JMenuBar mMenu;
     private JMenu Home, mniGestionar, mniRegistrar, mniReportes, mniAjustes;
     private JMenuItem Inicio, Salir;
-    private JMenuItem mniGestionar2, mniGestionar3, mniGestionar4, mniGestionar5;
+    private JMenuItem mniGestionar1, mniGestionar2, mniGestionar3, mniGestionar4, mniGestionar5;
     private JMenuItem mniRegistrar1, mniRegistrar2, mniRegistrar3;
     private JMenuItem mniReportes1, mniReportes2;
     private JMenuItem mniAjustes1;
@@ -56,14 +56,18 @@ public class FormMenu extends javax.swing.JFrame {
         mMenu.add(mniGestionar);
         mniGestionar.setForeground(color);
         mniGestionar.setFont(miFont);
-        mniGestionar3 = new JMenuItem("ESTUDIANTES", getIcon(iconEstudiante));
-        mniGestionar.add(mniGestionar3);
-        mniGestionar3.setForeground(color);
-        mniGestionar3.setFont(miFont);
+        mniGestionar1 = new JMenuItem("CURSO", getIcon(iconCurso));
+        mniGestionar.add(mniGestionar1);
+        mniGestionar1.setForeground(color);
+        mniGestionar1.setFont(miFont);
         mniGestionar2 = new JMenuItem("MATERIA", getIcon(iconMateria));
         mniGestionar.add(mniGestionar2);
         mniGestionar2.setForeground(color);
         mniGestionar2.setFont(miFont);
+        mniGestionar3 = new JMenuItem("ESTUDIANTES", getIcon(iconEstudiante));
+        mniGestionar.add(mniGestionar3);
+        mniGestionar3.setForeground(color);
+        mniGestionar3.setFont(miFont);
         mniGestionar4 = new JMenuItem("PERIODO", getIcon(iconPeriodo));
         mniGestionar.add(mniGestionar4);
         mniGestionar4.setForeground(color);
@@ -119,7 +123,9 @@ public class FormMenu extends javax.swing.JFrame {
         Salir.addActionListener((ActionEvent e) -> {
             System.exit(0);
         });
-
+        mniGestionar1.addActionListener((ActionEvent e) -> {
+            CambiarVista(GesCurso);
+        });
         mniGestionar2.addActionListener((ActionEvent e) -> {
             CambiarVista(GesMateria);
         });
@@ -175,6 +181,8 @@ public class FormMenu extends javax.swing.JFrame {
         GesPeriodo.setVisible(false);
         GesTarea.setEnabled(false);
         GesTarea.setVisible(false);
+        GesCurso.setEnabled(false);
+        GesCurso.setVisible(false);
 
         RegAsistencia.setEnabled(false);
         RegAsistencia.setVisible(false);
@@ -249,6 +257,15 @@ public class FormMenu extends javax.swing.JFrame {
         jScrollPane9 = new javax.swing.JScrollPane();
         jTable9 = new javax.swing.JTable();
         filler9 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 25), new java.awt.Dimension(0, 25), new java.awt.Dimension(32767, 30));
+        GesCurso = new javax.swing.JPanel();
+        jPanel28 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jPanel29 = new javax.swing.JPanel();
+        jToggleButton8 = new javax.swing.JToggleButton();
+        PRegistrar3 = new javax.swing.JPanel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jTable10 = new javax.swing.JTable();
+        filler12 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 25), new java.awt.Dimension(0, 25), new java.awt.Dimension(32767, 30));
         RegAsistencia = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -317,8 +334,16 @@ public class FormMenu extends javax.swing.JFrame {
         jToggleButton9 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         jToggleButton7 = new javax.swing.JToggleButton();
-        filler10 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 350), new java.awt.Dimension(0, 400), new java.awt.Dimension(32767, 400));
-        filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(550, 0), new java.awt.Dimension(300, 0), new java.awt.Dimension(300, 32767));
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jTable11 = new javax.swing.JTable();
+        jLabel22 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jTextField13 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jTextField14 = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -545,6 +570,11 @@ public class FormMenu extends javax.swing.JFrame {
             }
         ));
         jScrollPane3.setViewportView(jTable3);
+        if (jTable3.getColumnModel().getColumnCount() > 0) {
+            jTable3.getColumnModel().getColumn(3).setHeaderValue("APELLIDO MATERNO");
+            jTable3.getColumnModel().getColumn(4).setHeaderValue("TELEFONO");
+            jTable3.getColumnModel().getColumn(5).setHeaderValue("DIRECCION");
+        }
 
         javax.swing.GroupLayout PRegistrar2Layout = new javax.swing.GroupLayout(PRegistrar2);
         PRegistrar2.setLayout(PRegistrar2Layout);
@@ -731,6 +761,86 @@ public class FormMenu extends javax.swing.JFrame {
         GesTarea.add(jPanel13);
 
         JPrincipal.add(GesTarea, "card7");
+
+        GesCurso.setBackground(new java.awt.Color(255, 255, 255));
+        GesCurso.setLayout(new javax.swing.BoxLayout(GesCurso, javax.swing.BoxLayout.Y_AXIS));
+
+        jPanel28.setBackground(new java.awt.Color(153, 0, 0));
+        jPanel28.setMaximumSize(new java.awt.Dimension(1000, 35));
+        jPanel28.setMinimumSize(new java.awt.Dimension(1000, 35));
+
+        jLabel21.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("AGREGAR CURSO");
+
+        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
+        jPanel28.setLayout(jPanel28Layout);
+        jPanel28Layout.setHorizontalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel28Layout.setVerticalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel21)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        GesCurso.add(jPanel28);
+
+        jPanel29.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel29.setMaximumSize(new java.awt.Dimension(1000, 565));
+        jPanel29.setMinimumSize(new java.awt.Dimension(1000, 565));
+        jPanel29.setLayout(null);
+
+        jToggleButton8.setBackground(new java.awt.Color(153, 0, 0));
+        jToggleButton8.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jToggleButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jToggleButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/nuevoS.png"))); // NOI18N
+        jToggleButton8.setText("NUEVO");
+        jPanel29.add(jToggleButton8);
+        jToggleButton8.setBounds(6, 6, 106, 31);
+
+        PRegistrar3.setBackground(new java.awt.Color(204, 204, 204));
+        PRegistrar3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "LISTA DATOS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Leelawadee UI", 1, 14), new java.awt.Color(153, 0, 0))); // NOI18N
+
+        jTable10.setFont(new java.awt.Font("Leelawadee UI", 1, 12)); // NOI18N
+        jTable10.setForeground(new java.awt.Color(153, 0, 0));
+        jTable10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "CURSO", "PARALELO", "TURNO"
+            }
+        ));
+        jScrollPane10.setViewportView(jTable10);
+
+        javax.swing.GroupLayout PRegistrar3Layout = new javax.swing.GroupLayout(PRegistrar3);
+        PRegistrar3.setLayout(PRegistrar3Layout);
+        PRegistrar3Layout.setHorizontalGroup(
+            PRegistrar3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
+        );
+        PRegistrar3Layout.setVerticalGroup(
+            PRegistrar3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PRegistrar3Layout.createSequentialGroup()
+                .addGap(0, 77, Short.MAX_VALUE)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel29.add(PRegistrar3);
+        PRegistrar3.setBounds(0, 43, 1000, 490);
+        jPanel29.add(filler12);
+        filler12.setBounds(140, 535, 706, 25);
+
+        GesCurso.add(jPanel29);
+
+        JPrincipal.add(GesCurso, "card5");
 
         RegAsistencia.setBackground(new java.awt.Color(255, 255, 255));
         RegAsistencia.setMaximumSize(new java.awt.Dimension(1000, 600));
@@ -1306,20 +1416,20 @@ public class FormMenu extends javax.swing.JFrame {
         jPanel33.setLayout(new javax.swing.BoxLayout(jPanel33, javax.swing.BoxLayout.LINE_AXIS));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "DATOS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Leelawadee UI", 1, 14), new java.awt.Color(153, 0, 0))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "USUARIO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Leelawadee UI", 1, 14), new java.awt.Color(153, 0, 0))); // NOI18N
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
-        jPanel1Layout.columnWidths = new int[] {0, 1, 0, 1, 0, 1, 0, 1, 0};
-        jPanel1Layout.rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0};
+        jPanel1Layout.columnWidths = new int[] {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0};
+        jPanel1Layout.rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         jPanel1Layout.columnWeights = new double[] {0.0};
         jPanel1Layout.rowWeights = new double[] {0.0};
         jPanel1.setLayout(jPanel1Layout);
 
         jLabel17.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel17.setText("USUARIO:");
+        jLabel17.setText("TELEFONO:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         jPanel1.add(jLabel17, gridBagConstraints);
 
@@ -1327,29 +1437,28 @@ public class FormMenu extends javax.swing.JFrame {
         jTextField6.setForeground(new java.awt.Color(153, 0, 0));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
         jPanel1.add(jTextField6, gridBagConstraints);
 
         jLabel18.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel18.setText("NOMBRES:");
+        jLabel18.setText("DIRECCION:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         jPanel1.add(jLabel18, gridBagConstraints);
 
         jLabel19.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel19.setText("APELLIDOS:");
+        jLabel19.setText("USER:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         jPanel1.add(jLabel19, gridBagConstraints);
 
@@ -1357,7 +1466,7 @@ public class FormMenu extends javax.swing.JFrame {
         jTextField9.setForeground(new java.awt.Color(153, 0, 0));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 10;
@@ -1369,7 +1478,7 @@ public class FormMenu extends javax.swing.JFrame {
         jLabel20.setText("CONTRASEÑA:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         jPanel1.add(jLabel20, gridBagConstraints);
 
@@ -1377,7 +1486,7 @@ public class FormMenu extends javax.swing.JFrame {
         jTextField10.setForeground(new java.awt.Color(153, 0, 0));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 10;
@@ -1388,7 +1497,7 @@ public class FormMenu extends javax.swing.JFrame {
         jTextField11.setForeground(new java.awt.Color(153, 0, 0));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 10;
@@ -1398,7 +1507,9 @@ public class FormMenu extends javax.swing.JFrame {
         jToggleButton1.setBackground(new java.awt.Color(153, 0, 0));
         jToggleButton1.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/nuevo.png"))); // NOI18N
         jToggleButton1.setText("NUEVO");
+        jToggleButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
@@ -1421,10 +1532,12 @@ public class FormMenu extends javax.swing.JFrame {
         jToggleButton9.setBackground(new java.awt.Color(153, 0, 0));
         jToggleButton9.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jToggleButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jToggleButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/editar.png"))); // NOI18N
         jToggleButton9.setText("MODIFICAR");
+        jToggleButton9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
@@ -1433,10 +1546,12 @@ public class FormMenu extends javax.swing.JFrame {
         jToggleButton2.setBackground(new java.awt.Color(153, 0, 0));
         jToggleButton2.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jToggleButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/Guardar.png"))); // NOI18N
         jToggleButton2.setText("GUARDAR");
+        jToggleButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
@@ -1445,23 +1560,120 @@ public class FormMenu extends javax.swing.JFrame {
         jToggleButton7.setBackground(new java.awt.Color(153, 0, 0));
         jToggleButton7.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jToggleButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jToggleButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/eliminarLL.png"))); // NOI18N
         jToggleButton7.setText("ELIMINAR");
+        jToggleButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
         jPanel1.add(jToggleButton7, gridBagConstraints);
+
+        jTable11.setFont(new java.awt.Font("Leelawadee UI", 1, 10)); // NOI18N
+        jTable11.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "NOMBRES COMPLETO", "TELEFONO", "CORREO"
+            }
+        ));
+        jScrollPane11.setViewportView(jTable11);
+        if (jTable11.getColumnModel().getColumnCount() > 0) {
+            jTable11.getColumnModel().getColumn(0).setMinWidth(240);
+            jTable11.getColumnModel().getColumn(0).setMaxWidth(240);
+        }
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.RELATIVE;
+        gridBagConstraints.gridheight = 15;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jScrollPane11, gridBagConstraints);
+
+        jLabel22.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel22.setText("NOMBRE 1:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 4;
-        jPanel1.add(filler10, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 0;
-        jPanel1.add(filler11, gridBagConstraints);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        jPanel1.add(jLabel22, gridBagConstraints);
+
+        jTextField12.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jTextField12.setForeground(new java.awt.Color(153, 0, 0));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 150;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        jPanel1.add(jTextField12, gridBagConstraints);
+
+        jLabel23.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel23.setText("NOMBRE 2:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        jPanel1.add(jLabel23, gridBagConstraints);
+
+        jTextField13.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jTextField13.setForeground(new java.awt.Color(153, 0, 0));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 150;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        jPanel1.add(jTextField13, gridBagConstraints);
+
+        jLabel24.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel24.setText("APELLIDO PATERNO:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        jPanel1.add(jLabel24, gridBagConstraints);
+
+        jTextField7.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jTextField7.setForeground(new java.awt.Color(153, 0, 0));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 150;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        jPanel1.add(jTextField7, gridBagConstraints);
+
+        jLabel25.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel25.setText("APELLIDO MATERNO:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        jPanel1.add(jLabel25, gridBagConstraints);
+
+        jTextField14.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jTextField14.setForeground(new java.awt.Color(153, 0, 0));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 150;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        jPanel1.add(jTextField14, gridBagConstraints);
 
         jPanel33.add(jPanel1);
 
@@ -1534,6 +1746,7 @@ public class FormMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ConfiUsuario;
     private javax.swing.JPanel FMInicio;
+    private javax.swing.JPanel GesCurso;
     private javax.swing.JPanel GesEstudiante;
     private javax.swing.JPanel GesMateria;
     private javax.swing.JPanel GesPeriodo;
@@ -1541,6 +1754,7 @@ public class FormMenu extends javax.swing.JFrame {
     private javax.swing.JPanel JPrincipal;
     private javax.swing.JLabel LOGO;
     private javax.swing.JPanel PRegistrar2;
+    private javax.swing.JPanel PRegistrar3;
     private javax.swing.JPanel PRegistrar6;
     private javax.swing.JPanel PRegistrar7;
     private javax.swing.JPanel PRegistrar8;
@@ -1551,8 +1765,7 @@ public class FormMenu extends javax.swing.JFrame {
     private javax.swing.JPanel RepTareas;
     private javax.swing.JLabel TEXTO;
     private javax.swing.Box.Filler filler1;
-    private javax.swing.Box.Filler filler10;
-    private javax.swing.Box.Filler filler11;
+    private javax.swing.Box.Filler filler12;
     private javax.swing.Box.Filler filler2;
     private javax.swing.Box.Filler filler3;
     private javax.swing.Box.Filler filler4;
@@ -1574,6 +1787,11 @@ public class FormMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1601,6 +1819,8 @@ public class FormMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel33;
@@ -1611,6 +1831,8 @@ public class FormMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1620,6 +1842,8 @@ public class FormMenu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable10;
+    private javax.swing.JTable jTable11;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
@@ -1631,11 +1855,15 @@ public class FormMenu extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton11;
@@ -1645,6 +1873,7 @@ public class FormMenu extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JToggleButton jToggleButton6;
     private javax.swing.JToggleButton jToggleButton7;
+    private javax.swing.JToggleButton jToggleButton8;
     private javax.swing.JToggleButton jToggleButton9;
     // End of variables declaration//GEN-END:variables
 }
