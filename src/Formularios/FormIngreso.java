@@ -3,10 +3,12 @@ package Formularios;//GEN-LINE:variables
 import Placeholder.TextPrompt;
 import java.awt.event.KeyEvent;
 import Conectar.Coneccion;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 public class FormIngreso extends javax.swing.JFrame {
 
@@ -101,6 +103,11 @@ public class FormIngreso extends javax.swing.JFrame {
         BtnIngresar.setForeground(new java.awt.Color(255, 255, 255));
         BtnIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/8666665_check_icon.png"))); // NOI18N
         BtnIngresar.setText("INGRESAR");
+        BtnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnIngresarActionPerformed(evt);
+            }
+        });
 
         FIIcono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FIIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/8666609_user_icon.png"))); // NOI18N
@@ -200,11 +207,15 @@ public class FormIngreso extends javax.swing.JFrame {
         }
     }
 
+    private void BtnIngresarActionPerformed(java.awt.event.ActionEvent evt) {
+        validarUsuario();
+    }
+
     public void validarUsuario() {
         int resultado = 0;
         String usuario = TxtUsuario.getText();
         String contraseña = String.valueOf(TxtContraseña.getPassword());
-        String SQL = "SELECT * FROM usuario WHERE pas='" + usuario + "' and con='" + contraseña + "'";
+        String SQL = "SELECT * FROM usuario WHERE user='" + usuario + "' and pass='" + contraseña + "'";
 
         try {
             Statement st = conectar.createStatement();
@@ -230,6 +241,11 @@ public class FormIngreso extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        Color color = new Color(153, 0, 0);
+        Color colorTF = new Color(170, 0, 0);
+        UIManager.put("nimbusBase", color);
+        UIManager.put("text", color.WHITE);
+        UIManager.put("TextField.background", colorTF);
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
