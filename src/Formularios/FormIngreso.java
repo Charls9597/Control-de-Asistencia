@@ -1,9 +1,9 @@
-package Formularios;//GEN-LINE:variables
+package Formularios;
 
-import Placeholder.TextPrompt;
-import java.awt.event.KeyEvent;
 import Conectar.Coneccion;
+import Placeholder.TextPrompt;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -23,7 +23,7 @@ public class FormIngreso extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         FITexto = new javax.swing.JPanel();
@@ -63,18 +63,18 @@ public class FormIngreso extends javax.swing.JFrame {
         javax.swing.GroupLayout FITextoLayout = new javax.swing.GroupLayout(FITexto);
         FITexto.setLayout(FITextoLayout);
         FITextoLayout.setHorizontalGroup(
-                FITextoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            FITextoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         FITextoLayout.setVerticalGroup(
-                FITextoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(FITextoLayout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel4)
-                                .addContainerGap(48, Short.MAX_VALUE))
+            FITextoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FITextoLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         getContentPane().add(FITexto);
@@ -141,76 +141,76 @@ public class FormIngreso extends javax.swing.JFrame {
         javax.swing.GroupLayout FILoginLayout = new javax.swing.GroupLayout(FILogin);
         FILogin.setLayout(FILoginLayout);
         FILoginLayout.setHorizontalGroup(
-                FILoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(TxtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
-                        .addComponent(FIIcono, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(FILoginLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(FILoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(BtnIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(FILoginLayout.createSequentialGroup()
-                                                .addGroup(FILoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(jLabel2))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(FILoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(TxtContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
-                                                        .addComponent(BtnCerrar, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(TxtUsuario))))
-                                .addContainerGap())
+            FILoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TxtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
+            .addComponent(FIIcono, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(FILoginLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(FILoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BtnIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(FILoginLayout.createSequentialGroup()
+                        .addGroup(FILoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(FILoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TxtContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                            .addComponent(BtnCerrar, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(TxtUsuario))))
+                .addContainerGap())
         );
         FILoginLayout.setVerticalGroup(
-                FILoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(FILoginLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(BtnCerrar)
-                                .addGroup(FILoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(FILoginLayout.createSequentialGroup()
-                                                .addGap(1, 1, 1)
-                                                .addComponent(TxtTitulo)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(FIIcono)
-                                                .addGap(18, 18, 18)
-                                                .addGroup(FILoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(TxtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                                                .addComponent(TxtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(FILoginLayout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(41, 41, 41)
-                                .addComponent(BtnIngresar)
-                                .addGap(33, 33, 33))
+            FILoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FILoginLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BtnCerrar)
+                .addGroup(FILoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(FILoginLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(TxtTitulo)
+                        .addGap(18, 18, 18)
+                        .addComponent(FIIcono)
+                        .addGap(18, 18, 18)
+                        .addGroup(FILoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TxtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                        .addComponent(TxtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(FILoginLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(41, 41, 41)
+                .addComponent(BtnIngresar)
+                .addGap(33, 33, 33))
         );
 
         getContentPane().add(FILogin);
 
         pack();
         setLocationRelativeTo(null);
-    }// </editor-fold>                        
+    }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnCerrarActionPerformed(java.awt.event.ActionEvent evt) {
+    private void BtnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCerrarActionPerformed
         System.exit(0);
-    }
+    }//GEN-LAST:event_BtnCerrarActionPerformed
 
-    private void TxtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {
+    private void TxtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtUsuarioKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             TxtContraseña.requestFocus();
         }
-    }
+    }//GEN-LAST:event_TxtUsuarioKeyPressed
 
-    private void TxtContraseñaKeyPressed(java.awt.event.KeyEvent evt) {
+    private void TxtContraseñaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtContraseñaKeyPressed
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             BtnIngresar.requestFocus();
         }
-    }
+    }//GEN-LAST:event_TxtContraseñaKeyPressed
 
-    private void BtnIngresarActionPerformed(java.awt.event.ActionEvent evt) {
+    private void BtnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIngresarActionPerformed
+        // TODO add your handling code here:
         validarUsuario();
-    }
-
+    }//GEN-LAST:event_BtnIngresarActionPerformed
     public void validarUsuario() {
         int resultado = 0;
         String usuario = TxtUsuario.getText();
@@ -269,6 +269,12 @@ public class FormIngreso extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -278,7 +284,7 @@ public class FormIngreso extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCerrar;
     private javax.swing.JToggleButton BtnIngresar;
     private javax.swing.JLabel FIIcono;
@@ -291,5 +297,5 @@ public class FormIngreso extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    // End of variables declaration                   
+    // End of variables declaration//GEN-END:variables
 }
