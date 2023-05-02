@@ -1,8 +1,10 @@
 package Formularios;
 
+import Conectar.ConectarMateria;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JMenu;
@@ -11,6 +13,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
+import modelo.Materia;
 
 public class FormMenu extends javax.swing.JFrame {
 
@@ -33,9 +36,11 @@ public class FormMenu extends javax.swing.JFrame {
 
     Font miFont = new Font("Leelawadee UI", Font.BOLD, 14);
     Color color = new Color(255, 255, 255);
+    ConectarMateria conMat = new ConectarMateria();
 
     public FormMenu() {
         initComponents();
+        listadoMat();
         mMenu = new JMenuBar();
         setJMenuBar(mMenu);
 
@@ -208,7 +213,26 @@ public class FormMenu extends javax.swing.JFrame {
                 .getImage().getScaledInstance(30, 30, 0));
     }
 
-    @SuppressWarnings("unchecked")
+    void mostrarMateriaD(ArrayList<Materia> ldat) {
+        String mat[][] = new String[ldat.size()][9];
+        for (int i = 0; i < ldat.size(); i++) {
+            mat[i][0] = ldat.get(i).getId_materia()+"";
+            mat[i][1] = ldat.get(i).getNombre();
+        }
+        TablaMateria.setModel(new javax.swing.table.DefaultTableModel(
+                mat,
+                new String[]{
+                   "Nr.","MATERIA"
+                }
+        ));
+    }
+
+    void listadoMat() {
+        ArrayList<Materia> ldat = new ArrayList();
+        ldat = conMat.listado();
+        mostrarMateriaD(ldat);
+//      activa();
+    }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
@@ -225,10 +249,16 @@ public class FormMenu extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jToggleButton4 = new javax.swing.JToggleButton();
+        AgrgarMateria = new javax.swing.JToggleButton();
         PRegistrar6 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTable7 = new javax.swing.JTable();
+        TablaMateria = new javax.swing.JTable();
+        BtnNuevoMateria = new javax.swing.JButton();
+        BtnListarMateria = new javax.swing.JButton();
+        BtnGuardarMateria = new javax.swing.JButton();
+        BtnEditarMateria = new javax.swing.JButton();
+        BtnEliminarMateria = new javax.swing.JButton();
+        BtnCancelarMateria = new javax.swing.JToggleButton();
         filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 25), new java.awt.Dimension(0, 25), new java.awt.Dimension(32767, 30));
         GesEstudiante = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
@@ -243,7 +273,7 @@ public class FormMenu extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
-        jToggleButton5 = new javax.swing.JToggleButton();
+        AgregarPeriodo = new javax.swing.JToggleButton();
         PRegistrar7 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTable8 = new javax.swing.JTable();
@@ -358,7 +388,6 @@ public class FormMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 0, 0));
-        setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
         setResizable(false);
 
@@ -466,44 +495,140 @@ public class FormMenu extends javax.swing.JFrame {
         jPanel5.setMinimumSize(new java.awt.Dimension(1000, 565));
         jPanel5.setLayout(null);
 
-        jToggleButton4.setBackground(new java.awt.Color(153, 0, 0));
-        jToggleButton4.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        jToggleButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/nuevoS.png"))); // NOI18N
-        jToggleButton4.setText("NUEVO");
-        jPanel5.add(jToggleButton4);
-        jToggleButton4.setBounds(6, 6, 106, 31);
+        AgrgarMateria.setBackground(new java.awt.Color(153, 0, 0));
+        AgrgarMateria.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        AgrgarMateria.setForeground(new java.awt.Color(255, 255, 255));
+        AgrgarMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/nuevoS.png"))); // NOI18N
+        AgrgarMateria.setText("NUEVO");
+        AgrgarMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgrgarMateriaActionPerformed(evt);
+            }
+        });
+        jPanel5.add(AgrgarMateria);
+        AgrgarMateria.setBounds(6, 6, 106, 31);
 
         PRegistrar6.setBackground(new java.awt.Color(204, 204, 204));
         PRegistrar6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "LISTA DATOS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Leelawadee UI", 1, 14), new java.awt.Color(153, 0, 0))); // NOI18N
+        PRegistrar6.setLayout(new java.awt.GridBagLayout());
 
-        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+        TablaMateria.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        TablaMateria.setForeground(new java.awt.Color(153, 0, 0));
+        TablaMateria.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "MATERIA"
+
             }
         ));
-        jScrollPane7.setViewportView(jTable7);
+        jScrollPane7.setViewportView(TablaMateria);
 
-        javax.swing.GroupLayout PRegistrar6Layout = new javax.swing.GroupLayout(PRegistrar6);
-        PRegistrar6.setLayout(PRegistrar6Layout);
-        PRegistrar6Layout.setHorizontalGroup(
-            PRegistrar6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-        );
-        PRegistrar6Layout.setVerticalGroup(
-            PRegistrar6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PRegistrar6Layout.createSequentialGroup()
-                .addGap(0, 77, Short.MAX_VALUE)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        PRegistrar6.add(jScrollPane7, gridBagConstraints);
+
+        BtnNuevoMateria.setBackground(new java.awt.Color(153, 0, 0));
+        BtnNuevoMateria.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        BtnNuevoMateria.setForeground(new java.awt.Color(255, 255, 255));
+        BtnNuevoMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/nuevo.png"))); // NOI18N
+        BtnNuevoMateria.setText("NUEVO");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 8, 8, 8);
+        PRegistrar6.add(BtnNuevoMateria, gridBagConstraints);
+
+        BtnListarMateria.setBackground(new java.awt.Color(153, 0, 0));
+        BtnListarMateria.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        BtnListarMateria.setForeground(new java.awt.Color(255, 255, 255));
+        BtnListarMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/tarea_icon.png"))); // NOI18N
+        BtnListarMateria.setText("LISTAR");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 8, 8, 8);
+        PRegistrar6.add(BtnListarMateria, gridBagConstraints);
+
+        BtnGuardarMateria.setBackground(new java.awt.Color(153, 0, 0));
+        BtnGuardarMateria.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        BtnGuardarMateria.setForeground(new java.awt.Color(255, 255, 255));
+        BtnGuardarMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/Guardar.png"))); // NOI18N
+        BtnGuardarMateria.setText("GUARDAR");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 8, 8, 8);
+        PRegistrar6.add(BtnGuardarMateria, gridBagConstraints);
+
+        BtnEditarMateria.setBackground(new java.awt.Color(153, 0, 0));
+        BtnEditarMateria.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        BtnEditarMateria.setForeground(new java.awt.Color(255, 255, 255));
+        BtnEditarMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/editar.png"))); // NOI18N
+        BtnEditarMateria.setText("EDITAR");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 8, 8, 8);
+        PRegistrar6.add(BtnEditarMateria, gridBagConstraints);
+
+        BtnEliminarMateria.setBackground(new java.awt.Color(153, 0, 0));
+        BtnEliminarMateria.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        BtnEliminarMateria.setForeground(new java.awt.Color(255, 255, 255));
+        BtnEliminarMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/eliminarLL.png"))); // NOI18N
+        BtnEliminarMateria.setText("ELIMINAR");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 8, 8, 8);
+        PRegistrar6.add(BtnEliminarMateria, gridBagConstraints);
+
+        BtnCancelarMateria.setBackground(new java.awt.Color(153, 0, 0));
+        BtnCancelarMateria.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        BtnCancelarMateria.setForeground(new java.awt.Color(255, 255, 255));
+        BtnCancelarMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/Cancelar.png"))); // NOI18N
+        BtnCancelarMateria.setText("CANCELAR");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 8, 8, 8);
+        PRegistrar6.add(BtnCancelarMateria, gridBagConstraints);
 
         jPanel5.add(PRegistrar6);
         PRegistrar6.setBounds(0, 43, 1000, 490);
         jPanel5.add(filler7);
-        filler7.setBounds(140, 535, 706, 25);
+        filler7.setBounds(140, 535, 706, 30);
 
         GesMateria.add(jPanel5);
 
@@ -553,6 +678,11 @@ public class FormMenu extends javax.swing.JFrame {
         jToggleButton3.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/nuevoS.png"))); // NOI18N
         jToggleButton3.setText("NUEVO");
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
         jPanel7.add(jToggleButton3);
         jToggleButton3.setBounds(6, 6, 106, 31);
 
@@ -637,13 +767,18 @@ public class FormMenu extends javax.swing.JFrame {
         jPanel9.setMinimumSize(new java.awt.Dimension(1000, 565));
         jPanel9.setLayout(null);
 
-        jToggleButton5.setBackground(new java.awt.Color(153, 0, 0));
-        jToggleButton5.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        jToggleButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/nuevoS.png"))); // NOI18N
-        jToggleButton5.setText("NUEVO");
-        jPanel9.add(jToggleButton5);
-        jToggleButton5.setBounds(6, 6, 106, 31);
+        AgregarPeriodo.setBackground(new java.awt.Color(153, 0, 0));
+        AgregarPeriodo.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        AgregarPeriodo.setForeground(new java.awt.Color(255, 255, 255));
+        AgregarPeriodo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/nuevoS.png"))); // NOI18N
+        AgregarPeriodo.setText("NUEVO");
+        AgregarPeriodo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarPeriodoActionPerformed(evt);
+            }
+        });
+        jPanel9.add(AgregarPeriodo);
+        AgregarPeriodo.setBounds(6, 6, 106, 31);
 
         PRegistrar7.setBackground(new java.awt.Color(204, 204, 204));
         PRegistrar7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "LISTA DATOS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Leelawadee UI", 1, 14), new java.awt.Color(153, 0, 0))); // NOI18N
@@ -724,6 +859,11 @@ public class FormMenu extends javax.swing.JFrame {
         jToggleButton6.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/nuevoS.png"))); // NOI18N
         jToggleButton6.setText("NUEVO");
+        jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton6ActionPerformed(evt);
+            }
+        });
         jPanel13.add(jToggleButton6);
         jToggleButton6.setBounds(6, 6, 106, 31);
 
@@ -802,6 +942,11 @@ public class FormMenu extends javax.swing.JFrame {
         jToggleButton8.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Iconos/nuevoS.png"))); // NOI18N
         jToggleButton8.setText("NUEVO");
+        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton8ActionPerformed(evt);
+            }
+        });
         jPanel29.add(jToggleButton8);
         jToggleButton8.setBounds(6, 6, 106, 31);
 
@@ -1702,6 +1847,37 @@ public class FormMenu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void AgrgarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgrgarMateriaActionPerformed
+        // TODO add your handling code here:
+        AgregarMateria mat = new AgregarMateria();
+        mat.setVisible(true);
+        mat.setLocationRelativeTo(null);
+    }//GEN-LAST:event_AgrgarMateriaActionPerformed
+
+    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
+        // TODO add your handling code here:
+        AgregarCurso cur = new AgregarCurso();
+        cur.setVisible(true);
+    }//GEN-LAST:event_jToggleButton8ActionPerformed
+
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        // TODO add your handling code here:
+        AgregarEstudiantes est = new AgregarEstudiantes();
+        est.setVisible(true);
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
+
+    private void AgregarPeriodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarPeriodoActionPerformed
+        // TODO add your handling code here:
+        AgregarPeriodo perd = new AgregarPeriodo();
+        perd.setVisible(true);
+    }//GEN-LAST:event_AgregarPeriodoActionPerformed
+
+    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
+        // TODO add your handling code here:
+        AgregarTarea tar = new AgregarTarea();
+        tar.setVisible(true);
+    }//GEN-LAST:event_jToggleButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1744,6 +1920,14 @@ public class FormMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton AgregarPeriodo;
+    private javax.swing.JToggleButton AgrgarMateria;
+    private javax.swing.JToggleButton BtnCancelarMateria;
+    private javax.swing.JButton BtnEditarMateria;
+    private javax.swing.JButton BtnEliminarMateria;
+    private javax.swing.JButton BtnGuardarMateria;
+    private javax.swing.JButton BtnListarMateria;
+    private javax.swing.JButton BtnNuevoMateria;
     private javax.swing.JPanel ConfiUsuario;
     private javax.swing.JPanel FMInicio;
     private javax.swing.JPanel GesCurso;
@@ -1764,6 +1948,7 @@ public class FormMenu extends javax.swing.JFrame {
     private javax.swing.JPanel RepAsistencia;
     private javax.swing.JPanel RepTareas;
     private javax.swing.JLabel TEXTO;
+    private javax.swing.JTable TablaMateria;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler12;
     private javax.swing.Box.Filler filler2;
@@ -1849,7 +2034,6 @@ public class FormMenu extends javax.swing.JFrame {
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
-    private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable8;
     private javax.swing.JTable jTable9;
     private javax.swing.JTextField jTextField1;
@@ -1869,8 +2053,6 @@ public class FormMenu extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton11;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JToggleButton jToggleButton6;
     private javax.swing.JToggleButton jToggleButton7;
     private javax.swing.JToggleButton jToggleButton8;

@@ -1,19 +1,18 @@
 package Formularios;
 
-import Conectar.Coneccion;
+import Conectar.ConectarUsuario;
 import Placeholder.TextPrompt;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import modelo.Usuario;
 
 public class FormIngreso extends javax.swing.JFrame {
 
-    Coneccion con = new Coneccion();
-    Connection conectar = con.getConectar();
+    ArrayList<Usuario> ldat = new ArrayList();
+    ConectarUsuario cuser = new ConectarUsuario();
 
     public FormIngreso() {
         initComponents();
@@ -212,24 +211,17 @@ public class FormIngreso extends javax.swing.JFrame {
         validarUsuario();
     }//GEN-LAST:event_BtnIngresarActionPerformed
     public void validarUsuario() {
-        int resultado = 0;
-        String usuario = TxtUsuario.getText();
-        String contraseña = String.valueOf(TxtContraseña.getPassword());
-        String SQL = "SELECT * FROM usuario WHERE user='" + usuario + "' and pass='" + contraseña + "'";
-
+        String us, cla;
+        us = TxtUsuario.getText();
+        cla = TxtContraseña.getText();
+        ldat = cuser.verifica(us, cla);
         try {
-            Statement st = conectar.createStatement();
-            ResultSet rs = st.executeQuery(SQL);
-
-            if (rs.next()) {
-                resultado = 1;
-                if (resultado == 1) {
-                    FormMenu formM = new FormMenu();
-                    formM.setVisible(true);
-                    this.dispose();
-                }
+            if (ldat.size() > 0) {
+                JOptionPane.showMessageDialog(null, "BIENBENIDO!!!");
+                new FormMenu().setVisible(true);
+                this.dispose();
             } else {
-                JOptionPane.showMessageDialog(null, "USUARIO NO REGISTRADO");
+                JOptionPane.showMessageDialog(null, "Usuario No Existe..");
             }
 
         } catch (Exception e) {
